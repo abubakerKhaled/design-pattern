@@ -2,9 +2,10 @@
 
 namespace App\FactoryMethod;
 
-use App\FactoryMethod\EmailCreator;
-use App\FactoryMethod\PushCreator;
-use App\FactoryMethod\SMSCreator;
+use App\FactoryMethod\Creator\EmailCreator;
+use App\FactoryMethod\Creator\PushCreator;
+use App\FactoryMethod\Creator\SMSCreator;
+use App\FactoryMethod\Creator\NotificationCreator;
 use InvalidArgumentException;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -33,5 +34,5 @@ class Application
 }
 
 $app = new Application();
-$app->initialize('push');
+$app->initialize('email');
 $app->run();

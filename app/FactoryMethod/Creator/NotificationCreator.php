@@ -1,7 +1,7 @@
 <?php
 
-namespace App\FactoryMethod;
-use App\FactoryMethod\Notification;
+namespace App\FactoryMethod\Creator;
+use App\FactoryMethod\Product\Notification;
 
 abstract class NotificationCreator
 {

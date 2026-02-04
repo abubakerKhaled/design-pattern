@@ -1,7 +1,7 @@
 <?php
 
-namespace App\FactoryMethod;
-use App\FactoryMethod\Notification;
+namespace App\FactoryMethod\Product;
+use App\FactoryMethod\Product\Notification;
 
 
 class EmailNotification implements Notification
