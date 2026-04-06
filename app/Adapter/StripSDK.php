@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Adapter\ObjectAdapter;
+namespace App\Adapter;
 
 class StripSDK
 {
