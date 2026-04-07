@@ -3,12 +3,12 @@
 namespace App\FactoryMethod;
 
 use App\FactoryMethod\Creator\EmailCreator;
+use App\FactoryMethod\Creator\NotificationCreator;
 use App\FactoryMethod\Creator\PushCreator;
 use App\FactoryMethod\Creator\SMSCreator;
-use App\FactoryMethod\Creator\NotificationCreator;
 use InvalidArgumentException;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__.'/../../vendor/autoload.php';
 
 class Application
 {
@@ -17,13 +17,13 @@ class Application
     public function initialize($type)
     {
         if ($type === 'email') {
-            $this->creator = new EmailCreator();
-        } else if ($type === 'sms') {
-            $this->creator = new SMSCreator();
-        } else if ($type === 'push') {
-            $this->creator = new PushCreator();
+            $this->creator = new EmailCreator;
+        } elseif ($type === 'sms') {
+            $this->creator = new SMSCreator;
+        } elseif ($type === 'push') {
+            $this->creator = new PushCreator;
         } else {
-            throw new InvalidArgumentException("Unknown type");
+            throw new InvalidArgumentException('Unknown type');
         }
     }
 
@@ -33,6 +33,6 @@ class Application
     }
 }
 
-$app = new Application();
+$app = new Application;
 $app->initialize('email');
 $app->run();

@@ -1,9 +1,9 @@
 <?php
 
 namespace App\FactoryMethod\Creator;
-use App\FactoryMethod\Creator\NotificationCreator;
-use App\FactoryMethod\Product\PushNotification;
+
 use App\FactoryMethod\Product\Notification;
+use App\FactoryMethod\Product\PushNotification;
 
 class PushCreator extends NotificationCreator
 {

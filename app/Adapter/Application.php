@@ -2,14 +2,11 @@
 
 namespace App\Adapter;
 
-use App\Adapter\PaymentProcessor;
-use App\Adapter\PaypalGateway;
-use App\Adapter\ObjectAdapter\StripGateway as ObjectStripGateway;
 use App\Adapter\ClassAdapter\StripGateway as ClassStripGateway;
-use App\Adapter\StripSDK;
+use App\Adapter\ObjectAdapter\StripGateway as ObjectStripGateway;
 use InvalidArgumentException;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__.'/../../vendor/autoload.php';
 
 class Application
 {
@@ -18,13 +15,13 @@ class Application
     public function initialize($type)
     {
         if ($type === 'paypal') {
-            $this->processor = new PaypalGateway();
-        } else if ($type === 'stripe_object') {
-            $this->processor = new ObjectStripGateway(new StripSDK());
-        } else if ($type === 'stripe_class') {
-            $this->processor = new ClassStripGateway();
+            $this->processor = new PaypalGateway;
+        } elseif ($type === 'stripe_object') {
+            $this->processor = new ObjectStripGateway(new StripSDK);
+        } elseif ($type === 'stripe_class') {
+            $this->processor = new ClassStripGateway;
         } else {
-            throw new InvalidArgumentException("Unknown gateway");
+            throw new InvalidArgumentException('Unknown gateway');
         }
     }
 
@@ -36,7 +33,7 @@ class Application
 }
 
 // Verification Script
-$app = new Application();
+$app = new Application;
 
 echo "--- Testing Paypal Gateway ---\n";
 $app->initialize('paypal');
